@@ -5,18 +5,6 @@ const App = () => {
             Hiii, <br /> well I made it till here.
             <br />
             <br /> ~ Shivam
-            <br />
-            <br />
-            <div>
-                Wanna Laugh ?
-                <a
-                    href="https://adityakotkar.pages.dev/"
-                    style={{ textDecoration: "underline" }}
-                >
-                    {" "}
-                    Click Here
-                </a>
-            </div>
         </div>
     )
 }
