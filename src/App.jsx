@@ -1,10 +1,16 @@
-import React from "react"
+import { Hero, Extras, Projects, Background, BgMask } from "./components"
+import Socials from "./components/Socials"
+
 const App = () => {
     return (
-        <div className="flex flex-col items-center justify-center text-3xl sm:text-5xl font-bold h-screen w-full bg-black text-white">
-            Hiii, <br /> well I made it till here.
-            <br />
-            <br /> ~ Shivam
+        <div className="relative min-h-screen w-screen px-8 py-4 text-white">
+            <Hero />
+            {/* <Extras />
+            <Projects />
+            <Socials /> */}
+
+            <BgMask />
+            <Background />
         </div>
     )
 }
