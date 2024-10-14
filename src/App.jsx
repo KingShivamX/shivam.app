@@ -1,16 +1,22 @@
-import { Hero, Extras, Projects, Background, BgMask } from "./components"
-import Socials from "./components/Socials"
+import {
+    Hero,
+    Projects,
+    Background,
+    BgMask,
+    BgBehind,
+    Socials,
+} from "./components"
 
 const App = () => {
     return (
-        <div className="relative min-h-screen w-screen px-8 py-4 text-white">
-            <Hero />
-            {/* <Extras />
-            <Projects />
-            <Socials /> */}
-
+        <div className="relative min-h-screen w-screen px-8 py-8 text-white overflow-x-hidden">
             <BgMask />
             <Background />
+            <BgBehind />
+
+            <Hero />
+            <Projects />
+            <Socials />
         </div>
     )
 }
