@@ -7,10 +7,10 @@ const Projects = () => {
             <h1 className="font-bold text-[3.5vh] sm:text-[4vh] leading-10 mb-4 mt-7">
                 Projects:
             </h1>
-            <div className="h-full w-full flex flex-col gap-6 text-center text-[3.5vh] sm:text-[4vh]">
+            <div className="h-full w-full flex flex-col gap-6 text-center text-[3.5vh] sm:text-[4vh] font-semibold">
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
-                        className="underline underline-offset-2 custom-underline font-medium leading-3 pb-3"
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://restnrelax.vercel.app/listing"}
                     >
                         Rest&Relax
@@ -22,7 +22,7 @@ const Projects = () => {
                 </div>
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
-                        className="underline underline-offset-2 custom-underline font-medium leading-3 pb-3"
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://closed-ai-gen.vercel.app/"}
                     >
                         ClosedAI
@@ -34,7 +34,7 @@ const Projects = () => {
                 </div>
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
-                        className="underline underline-offset-2 custom-underline font-medium leading-3 pb-3"
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://www.youtube.com/watch?v=Q8R45QDseDE"}
                     >
                         Energy Consumption Prediction
@@ -46,7 +46,7 @@ const Projects = () => {
                 </div>
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
-                        className="underline underline-offset-2 custom-underline font-medium leading-3 pb-3"
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={
                             "https://kingshivamx.github.io/simongame/simon.html"
                         }
@@ -59,7 +59,7 @@ const Projects = () => {
                 </div>
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
-                        className="underline underline-offset-2 custom-underline font-medium  leading-3 pb-3"
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://kingshivamx.github.io/blog.html"}
                     >
                         Blog Page
@@ -68,7 +68,7 @@ const Projects = () => {
                 </div>
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
-                        className="underline underline-offset-2 custom-underline font-medium leading-3 pb-3"
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://kingshivamx.github.io/spotify.html"}
                     >
                         Spotify Desktop Clone
