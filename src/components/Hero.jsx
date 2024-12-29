@@ -15,7 +15,7 @@ const Hero = () => {
             </div>
             <div className="flex flex-row gap-5 sm:gap-8 mt-4 sm:mt-0 text-[4vh] sm:text-[4.5vh]">
                 <Link
-                    to="https://codeforces.com/profile/shivamhippalgave"
+                    to="https://codeforces.com/profile/kingshivam"
                     className="hover:scale-110 transition-transform duration-300 ease-in-out"
                 >
                     <SiCodeforces />
