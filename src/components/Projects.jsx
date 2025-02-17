@@ -23,6 +23,17 @@ const Projects = () => {
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
                         className="underline underline-offset-2 custom-underline leading-3 pb-3"
+                        to={"https://restnrelax.vercel.app/listing"}
+                    >
+                        DataFlowAI
+                    </Link>{" "}
+                    <p className="text-[2vh] font-medium">
+                        React.js, Chart.js, TailwindCSS, React Router
+                    </p>
+                </div>
+                <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <Link
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://closed-ai-gen.vercel.app/"}
                     >
                         ClosedAI
