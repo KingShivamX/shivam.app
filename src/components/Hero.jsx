@@ -21,16 +21,16 @@ const Hero = () => {
                     <SiCodeforces />
                 </Link>
                 <Link
-                    to="https://leetcode.com/u/shivamhippalgave"
-                    className="hover:scale-110 transition-transform duration-300 ease-in-out"
-                >
-                    <SiLeetcode />
-                </Link>
-                <Link
                     to="https://www.codechef.com/users/kingshivam"
                     className="hover:scale-110 transition-transform duration-300 ease-in-out"
                 >
                     <SiCodechef />
+                </Link>
+                <Link
+                    to="https://leetcode.com/u/shivamhippalgave"
+                    className="hover:scale-110 transition-transform duration-300 ease-in-out"
+                >
+                    <SiLeetcode />
                 </Link>
             </div>
         </div>
