@@ -11,6 +11,17 @@ const Projects = () => {
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                     <Link
                         className="underline underline-offset-2 custom-underline leading-3 pb-3"
+                        to={"https://dataflowai.shivam.app/"}
+                    >
+                        DataFlowAI
+                    </Link>{" "}
+                    <p className="text-[2vh] font-medium">
+                        React.js, Chart.js, TailwindCSS, React Router
+                    </p>
+                </div>
+                <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <Link
+                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://restnrelax.vercel.app/listing"}
                     >
                         Rest&Relax
@@ -18,17 +29,6 @@ const Projects = () => {
                     <p className="text-[2vh] font-medium">
                         Node.js, Express.js, MongoDB, Bootstrap, Mapbox SDK,
                         Passport.js, Cloudinary, Joi
-                    </p>
-                </div>
-                <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <Link
-                        className="underline underline-offset-2 custom-underline leading-3 pb-3"
-                        to={"https://dataflowai.shivam.app/"}
-                    >
-                        DataFlowAI
-                    </Link>{" "}
-                    <p className="text-[2vh] font-medium">
-                        React.js, Chart.js, TailwindCSS, React Router
                     </p>
                 </div>
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
