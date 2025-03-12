@@ -82,7 +82,7 @@ const Projects = () => {
                         className="underline underline-offset-2 custom-underline leading-3 pb-3"
                         to={"https://kingshivamx.github.io/spotify.html"}
                     >
-                        Spotify Desktop Clone
+                        Spotify Clone
                     </Link>{" "}
                     <p className="text-[2vh] font-medium">HTML, CSS</p>
                 </div>
