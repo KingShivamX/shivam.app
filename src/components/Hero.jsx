@@ -7,7 +7,7 @@ const Hero = () => {
         <div className=" z-10 w-full h-fit flex flex-col justify-between items-start sm:flex-row sm:items-center gap-3">
             <div>
                 <h1 className="font-bold text-[4.6vh] leading-10 pb-3">
-                    Hi I'm, Shivam Hippalgave
+                    Hi I&apos;m, Shivam Hippalgave
                 </h1>
                 <p className="text-[2vh] font-medium">
                     B.Tech CSE, SY Student at MIT Academy of Engineering, Pune
@@ -25,6 +25,16 @@ const Hero = () => {
                     className="hover:scale-110 transition-transform duration-300 ease-in-out"
                 >
                     <SiCodechef />
+                </Link>
+                <Link
+                    to="https://atcoder.jp/users/kingshivam"
+                    className="hover:scale-110 transition-transform duration-300 ease-in-out flex items-center"
+                >
+                    <img
+                        src="/atcoderlogo.svg"
+                        alt="AtCoder"
+                        className="h-[5vh] w-[5vh] sm:h-[5.5vh] sm:w-[5.5vh] filter invert brightness-0 opacity-100 translate-y-[-2px]"
+                    />
                 </Link>
                 <Link
                     to="https://leetcode.com/u/shivamhippalgave"
