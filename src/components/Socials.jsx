@@ -6,8 +6,8 @@ import {
     FaTwitter,
     FaLinkedin,
     FaYoutube,
-    FaBiohazard,
 } from "react-icons/fa"
+import { FaIdCard } from "react-icons/fa"
 
 const Socials = () => {
     return (
@@ -31,22 +31,22 @@ const Socials = () => {
                 <FaTwitter />
             </Link>
             <Link
-                to="https://www.youtube.com/@KingShivamX/featured"
-                className="hover:scale-110 transition-transform duration-300 ease-in-out"
-            >
-                <FaYoutube />
-            </Link>
-            <Link
                 to="https://www.instagram.com/sivazx"
                 className="hover:scale-110 transition-transform duration-300 ease-in-out"
             >
                 <FaInstagram />
             </Link>
             <Link
+                to="https://www.youtube.com/@KingShivamX/featured"
+                className="hover:scale-110 transition-transform duration-300 ease-in-out"
+            >
+                <FaYoutube />
+            </Link>
+            <Link
                 to="https://docs.google.com/document/d/1LQQC6ZRSkAdjhW2UJIPg3Y3_txBpEuKEz0AOEIPAJKI"
                 className="hover:scale-110 transition-transform duration-300 ease-in-out"
             >
-                <FaBiohazard />
+                <FaIdCard />
             </Link>
         </div>
     )
