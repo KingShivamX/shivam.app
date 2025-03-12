@@ -33,7 +33,7 @@ const Hero = () => {
                     <img
                         src="/atcoderlogo.svg"
                         alt="AtCoder"
-                        className="h-[5vh] w-[5vh] sm:h-[5.5vh] sm:w-[5.5vh] filter invert brightness-0 opacity-100 translate-y-[-2px]"
+                        className="h-[44px] w-[44px] min-h-[44px] min-w-[44px] filter invert brightness-0 opacity-100 translate-y-[-5px]"
                     />
                 </Link>
                 <Link
