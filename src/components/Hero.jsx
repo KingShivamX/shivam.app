@@ -13,18 +13,18 @@ const Hero = () => {
                     B.Tech CSE, SY Student at MIT Academy of Engineering, Pune
                 </p>
             </div>
-            <div className="flex flex-row gap-5 sm:gap-8 mt-4 sm:mt-0 text-[4vh] sm:text-[4.5vh]">
+            <div className="flex flex-row gap-5 sm:gap-8 mt-4 sm:mt-0">
                 <Link
                     to="https://codeforces.com/profile/kingshivam"
-                    className="hover:scale-110 transition-transform duration-300 ease-in-out"
+                    className="hover:scale-110 transition-transform duration-300 ease-in-out flex items-center"
                 >
-                    <SiCodeforces />
+                    <SiCodeforces className="h-[42px] w-[42px] min-h-[42px] min-w-[42px] max-h-[42px] max-w-[42px]" />
                 </Link>
                 <Link
                     to="https://www.codechef.com/users/kingshivam"
-                    className="hover:scale-110 transition-transform duration-300 ease-in-out"
+                    className="hover:scale-110 transition-transform duration-300 ease-in-out flex items-center"
                 >
-                    <SiCodechef />
+                    <SiCodechef className="h-[42px] w-[42px] min-h-[42px] min-w-[42px] max-h-[42px] max-w-[42px]" />
                 </Link>
                 <Link
                     to="https://atcoder.jp/users/kingshivam"
@@ -33,14 +33,14 @@ const Hero = () => {
                     <img
                         src="/atcoderlogo.svg"
                         alt="AtCoder"
-                        className="h-[44px] w-[44px] min-h-[44px] min-w-[44px] max-h-[44px] max-w-[44px]  filter invert brightness-0 opacity-100 translate-y-[-5px]"
+                        className="h-[47px] w-[47px] min-h-[47px] min-w-[47px] max-h-[47px] max-w-[47px] filter invert brightness-0 opacity-100"
                     />
                 </Link>
                 <Link
                     to="https://leetcode.com/u/shivamhippalgave"
-                    className="hover:scale-110 transition-transform duration-300 ease-in-out"
+                    className="hover:scale-110 transition-transform duration-300 ease-in-out flex items-center"
                 >
-                    <SiLeetcode />
+                    <SiLeetcode className="h-[42px] w-[42px] min-h-[42px] min-w-[42px] max-h-[42px] max-w-[42px]" />
                 </Link>
             </div>
         </div>
