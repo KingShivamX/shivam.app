@@ -42,12 +42,14 @@ const Socials = () => {
             >
                 <FaYoutube />
             </Link>
-            <Link
-                to="https://docs.google.com/document/d/1LQQC6ZRSkAdjhW2UJIPg3Y3_txBpEuKEz0AOEIPAJKI"
+            <a
+                href="/Shivam_Hippalgave_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform duration-300 ease-in-out"
             >
                 <FaIdCard />
-            </Link>
+            </a>
         </div>
     )
 }
