@@ -16,7 +16,8 @@ const Projects = () => {
                         DataFlowAI
                     </Link>{" "}
                     <p className="text-[2vh] font-medium">
-                        React.js, Chart.js, TailwindCSS, React Router
+                        React.js, Chart.js, Framer-Motion, TailwindCSS, React
+                        Router
                     </p>
                 </div>
                 <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
