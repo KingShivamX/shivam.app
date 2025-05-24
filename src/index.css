@@ -4,12 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimize font rendering */
 body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer 10+ */
+    /* Using smaller Minecraft pointer PNG for all cursor states */
+    cursor: url("/pointer.png"), auto;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -20,4 +30,42 @@ body::-webkit-scrollbar {
 
 .custom-underline {
     text-decoration-thickness: 1px !important;
+}
+
+/* Using the smaller pointer PNG for interactive elements too */
+a,
+button,
+[role="button"],
+.cursor-pointer {
+    cursor: url("/pointer.png"), pointer !important;
+}
+
+/* Same small cursor for form elements */
+input,
+textarea,
+select {
+    cursor: url("/pointer.png"), text;
+}
+
+/* Glassmorphism utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Performance optimization for animations */
+* {
+    will-change: auto;
+}
+
+/* Loading optimization */
+img {
+    loading: lazy;
 }

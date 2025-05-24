@@ -6,3 +6,4 @@ import BgMask from "./BgMask.jsx"
 import BgBehind from "./BgBehind.jsx"
 
 export { Hero, Projects, Socials, Background, BgMask, BgBehind }
+export { default as LoadingScreen } from "./LoadingScreen"
