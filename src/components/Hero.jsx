@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { SiCodechef, SiCodeforces, SiLeetcode } from "react-icons/si"
+import useIsMobile from "../hooks/useIsMobile"
 
 const Hero = () => {
+    const isMobile = useIsMobile()
+
     return (
         <motion.div
             className="z-10 w-full h-fit flex flex-col justify-between items-center sm:flex-row sm:items-center gap-6"
@@ -68,29 +71,31 @@ const Hero = () => {
                     </motion.p>
                 </motion.div>
 
-                {/* Floating particles around name - Reduced count */}
-                <div className="absolute inset-0 pointer-events-none">
-                    {[...Array(3)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
-                            style={{
-                                left: `${10 + Math.random() * 80}%`,
-                                top: `${10 + Math.random() * 80}%`,
-                            }}
-                            animate={{
-                                y: [0, -20, 0],
-                                opacity: [0, 1, 0],
-                                scale: [0, 1, 0],
-                            }}
-                            transition={{
-                                duration: 2 + Math.random() * 1,
-                                repeat: Infinity,
-                                delay: Math.random() * 1,
-                            }}
-                        />
-                    ))}
-                </div>
+                {/* Floating particles around name - Desktop only */}
+                {!isMobile && (
+                    <div className="absolute inset-0 pointer-events-none">
+                        {[...Array(3)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+                                style={{
+                                    left: `${10 + Math.random() * 80}%`,
+                                    top: `${10 + Math.random() * 80}%`,
+                                }}
+                                animate={{
+                                    y: [0, -20, 0],
+                                    opacity: [0, 1, 0],
+                                    scale: [0, 1, 0],
+                                }}
+                                transition={{
+                                    duration: 2 + Math.random() * 1,
+                                    repeat: Infinity,
+                                    delay: Math.random() * 1,
+                                }}
+                            />
+                        ))}
+                    </div>
+                )}
             </motion.div>
 
             {/* CP Profiles Section */}
@@ -157,12 +162,16 @@ const Hero = () => {
                                     delay: 0.5 + index * 0.1,
                                     ease: "easeOut",
                                 }}
-                                whileHover={{
-                                    scale: 1.2,
-                                    rotate: 10,
-                                    y: -5,
-                                    transition: { duration: 0.15 },
-                                }}
+                                whileHover={
+                                    !isMobile
+                                        ? {
+                                              scale: 1.2,
+                                              rotate: 10,
+                                              y: -5,
+                                              transition: { duration: 0.15 },
+                                          }
+                                        : {}
+                                }
                                 whileTap={{ scale: 0.9 }}
                             >
                                 <Link
@@ -213,30 +222,32 @@ const Hero = () => {
                         ))}
                     </div>
 
-                    {/* Floating particles around icons - Reduced count */}
-                    <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-                        {[...Array(4)].map((_, i) => (
-                            <motion.div
-                                key={i}
-                                className="absolute w-1 h-1 bg-purple-400/40 rounded-full"
-                                style={{
-                                    left: `${Math.random() * 100}%`,
-                                    top: `${Math.random() * 100}%`,
-                                }}
-                                animate={{
-                                    x: [0, 20, 0],
-                                    y: [0, -30, 0],
-                                    opacity: [0, 0.8, 0],
-                                    scale: [0, 1.5, 0],
-                                }}
-                                transition={{
-                                    duration: 3 + Math.random() * 2,
-                                    repeat: Infinity,
-                                    delay: Math.random() * 2,
-                                }}
-                            />
-                        ))}
-                    </div>
+                    {/* Floating particles around icons - Desktop only */}
+                    {!isMobile && (
+                        <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                            {[...Array(4)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="absolute w-1 h-1 bg-purple-400/40 rounded-full"
+                                    style={{
+                                        left: `${Math.random() * 100}%`,
+                                        top: `${Math.random() * 100}%`,
+                                    }}
+                                    animate={{
+                                        x: [0, 20, 0],
+                                        y: [0, -30, 0],
+                                        opacity: [0, 0.8, 0],
+                                        scale: [0, 1.5, 0],
+                                    }}
+                                    transition={{
+                                        duration: 3 + Math.random() * 2,
+                                        repeat: Infinity,
+                                        delay: Math.random() * 2,
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </motion.div>
             </motion.div>
         </motion.div>

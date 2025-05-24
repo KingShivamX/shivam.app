@@ -9,8 +9,11 @@ import {
     FaYoutube,
 } from "react-icons/fa"
 import { FaIdCard } from "react-icons/fa"
+import useIsMobile from "../hooks/useIsMobile"
 
 const Socials = () => {
+    const isMobile = useIsMobile()
+
     const socialLinks = [
         {
             Icon: FaGithub,
@@ -82,12 +85,16 @@ const Socials = () => {
                                 delay: 0.5 + index * 0.1,
                                 ease: "easeOut",
                             }}
-                            whileHover={{
-                                scale: 1.2,
-                                rotate: 10,
-                                y: -5,
-                                transition: { duration: 0.15 },
-                            }}
+                            whileHover={
+                                !isMobile
+                                    ? {
+                                          scale: 1.2,
+                                          rotate: 10,
+                                          y: -5,
+                                          transition: { duration: 0.15 },
+                                      }
+                                    : {}
+                            }
                             whileTap={{ scale: 0.9 }}
                         >
                             {social.isExternal ? (
@@ -163,30 +170,32 @@ const Socials = () => {
                     ))}
                 </div>
 
-                {/* Floating particles around icons */}
-                <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-                    {[...Array(4)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-1 h-1 bg-purple-400/40 rounded-full"
-                            style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                            }}
-                            animate={{
-                                x: [0, 20, 0],
-                                y: [0, -30, 0],
-                                opacity: [0, 0.8, 0],
-                                scale: [0, 1.5, 0],
-                            }}
-                            transition={{
-                                duration: 3 + Math.random() * 2,
-                                repeat: Infinity,
-                                delay: Math.random() * 2,
-                            }}
-                        />
-                    ))}
-                </div>
+                {/* Floating particles around icons - Desktop only */}
+                {!isMobile && (
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+                        {[...Array(4)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-1 h-1 bg-purple-400/40 rounded-full"
+                                style={{
+                                    left: `${Math.random() * 100}%`,
+                                    top: `${Math.random() * 100}%`,
+                                }}
+                                animate={{
+                                    x: [0, 20, 0],
+                                    y: [0, -30, 0],
+                                    opacity: [0, 0.8, 0],
+                                    scale: [0, 1.5, 0],
+                                }}
+                                transition={{
+                                    duration: 3 + Math.random() * 2,
+                                    repeat: Infinity,
+                                    delay: Math.random() * 2,
+                                }}
+                            />
+                        ))}
+                    </div>
+                )}
             </motion.div>
         </motion.div>
     )

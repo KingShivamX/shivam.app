@@ -2,8 +2,11 @@ import { useRef } from "react"
 import { Link } from "react-router-dom"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 import PropTypes from "prop-types"
+import useIsMobile from "../hooks/useIsMobile"
 
 const Projects = () => {
+    const isMobile = useIsMobile()
+
     const projectsData = [
         {
             title: "DataFlowAI",
@@ -70,7 +73,7 @@ const Projects = () => {
         },
     ]
 
-    const ProjectCard = ({ project, index }) => {
+    const ProjectCard = ({ project, index, isMobile }) => {
         const cardRef = useRef(null)
         const x = useMotionValue(0)
         const y = useMotionValue(0)
@@ -88,30 +91,45 @@ const Projects = () => {
                     delay: index * 0.05,
                     ease: "easeOut",
                 }}
-                onMouseMove={(e) => {
-                    const rect = cardRef.current?.getBoundingClientRect()
-                    if (rect) {
-                        const centerX = rect.left + rect.width / 2
-                        const centerY = rect.top + rect.height / 2
-                        x.set(e.clientX - centerX)
-                        y.set(e.clientY - centerY)
-                    }
-                }}
-                onMouseLeave={() => {
-                    x.set(0)
-                    y.set(0)
-                }}
-                whileHover={{ scale: 1.05, z: 50 }}
-                style={{
-                    rotateX: useSpring(rotateX, {
-                        stiffness: 300,
-                        damping: 30,
-                    }),
-                    rotateY: useSpring(rotateY, {
-                        stiffness: 300,
-                        damping: 30,
-                    }),
-                }}
+                onMouseMove={
+                    !isMobile
+                        ? (e) => {
+                              const rect =
+                                  cardRef.current?.getBoundingClientRect()
+                              if (rect) {
+                                  const centerX = rect.left + rect.width / 2
+                                  const centerY = rect.top + rect.height / 2
+                                  x.set(e.clientX - centerX)
+                                  y.set(e.clientY - centerY)
+                              }
+                          }
+                        : undefined
+                }
+                onMouseLeave={
+                    !isMobile
+                        ? () => {
+                              x.set(0)
+                              y.set(0)
+                          }
+                        : undefined
+                }
+                whileHover={
+                    !isMobile ? { scale: 1.05, z: 50 } : { scale: 1.02 }
+                }
+                style={
+                    !isMobile
+                        ? {
+                              rotateX: useSpring(rotateX, {
+                                  stiffness: 300,
+                                  damping: 30,
+                              }),
+                              rotateY: useSpring(rotateY, {
+                                  stiffness: 300,
+                                  damping: 30,
+                              }),
+                          }
+                        : {}
+                }
             >
                 {/* Magnetic glow effect */}
                 <motion.div
@@ -128,47 +146,57 @@ const Projects = () => {
                     }}
                     transition={{ duration: 0.2 }}
                 >
-                    {/* Animated background pattern */}
-                    <motion.div
-                        className="absolute top-0 right-0 w-32 h-32 opacity-10"
-                        animate={{
-                            rotate: [0, 360],
-                            scale: [1, 1.2, 1],
-                        }}
-                        transition={{
-                            duration: 15,
-                            repeat: Infinity,
-                            ease: "linear",
-                        }}
-                    >
-                        <div
-                            className={`w-full h-full bg-gradient-to-br ${project.gradient} rounded-full blur-3xl`}
-                        />
-                    </motion.div>
-
-                    {/* Floating particles */}
-                    <div className="absolute inset-0 pointer-events-none">
-                        {[...Array(3)].map((_, i) => (
-                            <motion.div
-                                key={i}
-                                className={`absolute w-2 h-2 bg-${project.accent}-400/30 rounded-full`}
-                                style={{
-                                    left: `${20 + Math.random() * 60}%`,
-                                    top: `${20 + Math.random() * 60}%`,
-                                }}
-                                animate={{
-                                    y: [0, -30, 0],
-                                    opacity: [0, 1, 0],
-                                    scale: [0, 1.5, 0],
-                                }}
-                                transition={{
-                                    duration: 2 + Math.random() * 1,
-                                    repeat: Infinity,
-                                    delay: Math.random() * 1,
-                                }}
+                    {/* Animated background pattern - Desktop only */}
+                    {!isMobile ? (
+                        <motion.div
+                            className="absolute top-0 right-0 w-32 h-32 opacity-10"
+                            animate={{
+                                rotate: [0, 360],
+                                scale: [1, 1.2, 1],
+                            }}
+                            transition={{
+                                duration: 15,
+                                repeat: Infinity,
+                                ease: "linear",
+                            }}
+                        >
+                            <div
+                                className={`w-full h-full bg-gradient-to-br ${project.gradient} rounded-full blur-3xl`}
                             />
-                        ))}
-                    </div>
+                        </motion.div>
+                    ) : (
+                        <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
+                            <div
+                                className={`w-full h-full bg-gradient-to-br ${project.gradient} rounded-full blur-3xl`}
+                            />
+                        </div>
+                    )}
+
+                    {/* Floating particles - Desktop only */}
+                    {!isMobile && (
+                        <div className="absolute inset-0 pointer-events-none">
+                            {[...Array(3)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    className={`absolute w-2 h-2 bg-${project.accent}-400/30 rounded-full`}
+                                    style={{
+                                        left: `${20 + Math.random() * 60}%`,
+                                        top: `${20 + Math.random() * 60}%`,
+                                    }}
+                                    animate={{
+                                        y: [0, -30, 0],
+                                        opacity: [0, 1, 0],
+                                        scale: [0, 1.5, 0],
+                                    }}
+                                    transition={{
+                                        duration: 2 + Math.random() * 1,
+                                        repeat: Infinity,
+                                        delay: Math.random() * 1,
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    )}
 
                     {/* Project Content */}
                     <div className="relative z-10 h-full flex flex-col">
@@ -288,6 +316,7 @@ const Projects = () => {
             accent: PropTypes.string.isRequired,
         }).isRequired,
         index: PropTypes.number.isRequired,
+        isMobile: PropTypes.bool.isRequired,
     }
 
     return (
@@ -339,29 +368,31 @@ const Projects = () => {
                     transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                 />
 
-                {/* Floating title particles */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none">
-                    {[...Array(3)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-2 h-2 bg-purple-400/40 rounded-full"
-                            style={{
-                                left: `${-100 + Math.random() * 200}px`,
-                                top: `${-50 + Math.random() * 100}px`,
-                            }}
-                            animate={{
-                                y: [0, -50, 0],
-                                opacity: [0, 1, 0],
-                                scale: [0, 1, 0],
-                            }}
-                            transition={{
-                                duration: 3 + Math.random() * 1,
-                                repeat: Infinity,
-                                delay: Math.random() * 2,
-                            }}
-                        />
-                    ))}
-                </div>
+                {/* Floating title particles - Desktop only */}
+                {!isMobile && (
+                    <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none">
+                        {[...Array(3)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-2 h-2 bg-purple-400/40 rounded-full"
+                                style={{
+                                    left: `${-100 + Math.random() * 200}px`,
+                                    top: `${-50 + Math.random() * 100}px`,
+                                }}
+                                animate={{
+                                    y: [0, -50, 0],
+                                    opacity: [0, 1, 0],
+                                    scale: [0, 1, 0],
+                                }}
+                                transition={{
+                                    duration: 3 + Math.random() * 1,
+                                    repeat: Infinity,
+                                    delay: Math.random() * 2,
+                                }}
+                            />
+                        ))}
+                    </div>
+                )}
             </motion.div>
 
             {/* Enhanced Projects Grid - Made slightly smaller */}
@@ -372,7 +403,12 @@ const Projects = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
                 {projectsData.map((project, index) => (
-                    <ProjectCard key={index} project={project} index={index} />
+                    <ProjectCard
+                        key={index}
+                        project={project}
+                        index={index}
+                        isMobile={isMobile}
+                    />
                 ))}
             </motion.div>
         </motion.div>

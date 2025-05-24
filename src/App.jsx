@@ -9,10 +9,12 @@ import {
     Socials,
 } from "./components"
 import LoadingScreen from "./components/LoadingScreen"
+import useIsMobile from "./hooks/useIsMobile"
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [loadingProgress, setLoadingProgress] = useState(0)
+    const isMobile = useIsMobile()
 
     useEffect(() => {
         // Simplified loading - just wait for video or timeout
@@ -88,29 +90,31 @@ const App = () => {
                     </footer>
                 </div>
 
-                {/* Reduced floating elements for better performance */}
-                <div className="fixed inset-0 pointer-events-none z-5 overflow-hidden">
-                    {[...Array(3)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-1 h-1 bg-white/10 rounded-full"
-                            style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                            }}
-                            animate={{
-                                y: [0, -40],
-                                opacity: [0, 0.3, 0],
-                            }}
-                            transition={{
-                                duration: 8,
-                                repeat: Infinity,
-                                delay: Math.random() * 4,
-                                ease: "linear",
-                            }}
-                        />
-                    ))}
-                </div>
+                {/* Floating elements - disabled on mobile for performance */}
+                {!isMobile && (
+                    <div className="fixed inset-0 pointer-events-none z-5 overflow-hidden">
+                        {[...Array(3)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-1 h-1 bg-white/10 rounded-full"
+                                style={{
+                                    left: `${Math.random() * 100}%`,
+                                    top: `${Math.random() * 100}%`,
+                                }}
+                                animate={{
+                                    y: [0, -40],
+                                    opacity: [0, 0.3, 0],
+                                }}
+                                transition={{
+                                    duration: 8,
+                                    repeat: Infinity,
+                                    delay: Math.random() * 4,
+                                    ease: "linear",
+                                }}
+                            />
+                        ))}
+                    </div>
+                )}
             </motion.div>
         </>
     )
