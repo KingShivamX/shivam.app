@@ -1,0 +1,51 @@
+/* Custom Minecraft Enchanted Diamond Sword Cursor */
+* {
+    cursor: url("./Minecraft Enchanted Diamond Sword Animated/Minecraft Enchanted Diamond Sword Animated--cursor--SweezyCursors.png")
+            0 0,
+        auto !important;
+}
+
+/* Pointer cursor for interactive elements */
+a,
+button,
+[role="button"],
+.cursor-pointer,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.group a, /* Ensure links within group elements get pointer */
+.group button, /* Ensure buttons within group elements get pointer */
+/* Specific Framer Motion elements that are interactive */
+[data-framer-name*="Link"]:hover,
+[data-framer-name*="Button"]:hover {
+    cursor: url("./Minecraft Enchanted Diamond Sword Animated/Minecraft Enchanted Diamond Sword Animated--pointer--SweezyCursors.png")
+            0 0,
+        pointer !important;
+}
+
+/* Text cursor for input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select,
+[contenteditable="true"] {
+    cursor: url("./Minecraft Enchanted Diamond Sword Animated/Minecraft Enchanted Diamond Sword Animated--cursor--SweezyCursors.png")
+            0 0,
+        text !important;
+}
+
+/* Ensure cursor works on body and html */
+html,
+body {
+    cursor: url("./Minecraft Enchanted Diamond Sword Animated/Minecraft Enchanted Diamond Sword Animated--cursor--SweezyCursors.png")
+            0 0,
+        auto !important;
+}
+
+/* Override for any motion elements that might have their own cursors */
+[data-framer-name] {
+    cursor: url("./Minecraft Enchanted Diamond Sword Animated/Minecraft Enchanted Diamond Sword Animated--cursor--SweezyCursors.png")
+            0 0,
+        auto !important;
+}

@@ -80,7 +80,7 @@ const Projects = () => {
         const rotateX = useTransform(y, [-100, 100], [30, -30])
         const rotateY = useTransform(x, [-100, 100], [-30, 30])
 
-        return (
+    return (
             <motion.div
                 ref={cardRef}
                 className="group relative h-full perspective-1000"
@@ -195,7 +195,7 @@ const Projects = () => {
                                     }}
                                 />
                             ))}
-                        </div>
+                </div>
                     )}
 
                     {/* Project Content */}
@@ -210,7 +210,7 @@ const Projects = () => {
                                 duration: 0.3,
                             }}
                         >
-                            <Link
+                    <Link
                                 to={project.url}
                                 className={`bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent hover:underline decoration-2 underline-offset-4 transition-all duration-200`}
                             >
@@ -243,7 +243,7 @@ const Projects = () => {
                                 duration: 0.3,
                             }}
                         >
-                            <Link
+                    <Link
                                 to={project.url}
                                 className="group/btn relative overflow-hidden"
                             >
@@ -255,7 +255,7 @@ const Projects = () => {
                                             "0 20px 40px rgba(0,0,0,0.3)",
                                     }}
                                     whileTap={{ scale: 0.95 }}
-                                >
+                    >
                                     {/* Button background animation */}
                                     <motion.div
                                         className="absolute inset-0 bg-white/20 rounded-xl"
@@ -285,7 +285,7 @@ const Projects = () => {
                                 </motion.div>
                             </Link>
                         </motion.div>
-                    </div>
+                </div>
 
                     {/* Animated border */}
                     <motion.div
@@ -391,7 +391,7 @@ const Projects = () => {
                                 }}
                             />
                         ))}
-                    </div>
+                </div>
                 )}
             </motion.div>
 
@@ -401,7 +401,7 @@ const Projects = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-            >
+                    >
                 {projectsData.map((project, index) => (
                     <ProjectCard
                         key={index}
