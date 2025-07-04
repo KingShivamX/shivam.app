@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
     Hero,
@@ -7,8 +7,8 @@ import {
     BgMask,
     BgBehind,
     Socials,
+    LoadingScreen,
 } from "./components"
-import LoadingScreen from "./components/LoadingScreen"
 import useIsMobile from "./hooks/useIsMobile"
 
 const App = () => {
@@ -16,34 +16,44 @@ const App = () => {
     const [loadingProgress, setLoadingProgress] = useState(0)
     const isMobile = useIsMobile()
 
+    // Memoize the video loaded handler for better performance
+    const handleVideoLoaded = useCallback(() => {
+        setLoadingProgress(100)
+        setTimeout(
+            () => {
+                setIsLoading(false)
+            },
+            isMobile ? 100 : 200
+        )
+    }, [isMobile])
+
     useEffect(() => {
-        // Simplified loading - just wait for video or timeout
-        const loadingTimer = setTimeout(() => {
-            setIsLoading(false)
-        }, 1500) // Reduced from 2000ms to 1500ms
+        // Faster loading for mobile
+        const loadingTimer = setTimeout(
+            () => {
+                setIsLoading(false)
+            },
+            isMobile ? 1000 : 1500
+        )
 
         return () => clearTimeout(loadingTimer)
-    }, [])
-
-    const handleVideoLoaded = () => {
-        setLoadingProgress(100)
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 200) // Reduced from 300ms to 200ms
-    }
+    }, [isMobile])
 
     useEffect(() => {
-        // Simplified progress simulation
+        // Faster progress simulation
         if (isLoading) {
-            const interval = setInterval(() => {
-                setLoadingProgress((prev) => {
-                    if (prev >= 90) return prev
-                    return prev + 25 // Faster progress increments
-                })
-            }, 150) // Faster updates
+            const interval = setInterval(
+                () => {
+                    setLoadingProgress((prev) => {
+                        if (prev >= 90) return prev
+                        return prev + (isMobile ? 30 : 25)
+                    })
+                },
+                isMobile ? 100 : 150
+            )
             return () => clearInterval(interval)
         }
-    }, [isLoading])
+    }, [isLoading, isMobile])
 
     return (
         <>
@@ -58,7 +68,7 @@ const App = () => {
                 className="relative min-h-screen w-screen text-white overflow-x-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isLoading ? 0 : 1 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: isMobile ? 0.2 : 0.4 }}
                 style={{ display: isLoading ? "none" : "block" }}
             >
                 {/* Background Layers */}

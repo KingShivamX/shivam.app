@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useRef, useEffect } from "react"
 import useIsMobile from "../hooks/useIsMobile"
 
 const Background = ({ onVideoLoaded }) => {

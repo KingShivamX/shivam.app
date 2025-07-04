@@ -4,6 +4,6 @@ import Socials from "./Socials.jsx"
 import Background from "./Background.jsx"
 import BgMask from "./BgMask.jsx"
 import BgBehind from "./BgBehind.jsx"
+import LoadingScreen from "./LoadingScreen.jsx"
 
-export { Hero, Projects, Socials, Background, BgMask, BgBehind }
-export { default as LoadingScreen } from "./LoadingScreen"
+export { Hero, Projects, Socials, Background, BgMask, BgBehind, LoadingScreen }

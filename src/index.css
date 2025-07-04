@@ -93,3 +93,21 @@ video {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
+
+/* Optimize font loading */
+@font-face {
+    font-family: "Montserrat";
+    font-display: swap;
+}
+
+/* Additional performance optimizations */
+* {
+    box-sizing: border-box;
+}
+
+/* Prevent layout shifts */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
