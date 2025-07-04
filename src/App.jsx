@@ -20,7 +20,7 @@ const App = () => {
         // Simplified loading - just wait for video or timeout
         const loadingTimer = setTimeout(() => {
             setIsLoading(false)
-        }, 2000) // Maximum 2 seconds loading
+        }, 1500) // Reduced from 2000ms to 1500ms
 
         return () => clearTimeout(loadingTimer)
     }, [])
@@ -29,18 +29,18 @@ const App = () => {
         setLoadingProgress(100)
         setTimeout(() => {
             setIsLoading(false)
-        }, 300) // Shorter delay
+        }, 200) // Reduced from 300ms to 200ms
     }
 
     useEffect(() => {
-        // Simulate progress
+        // Simplified progress simulation
         if (isLoading) {
             const interval = setInterval(() => {
                 setLoadingProgress((prev) => {
                     if (prev >= 90) return prev
-                    return prev + 20
+                    return prev + 25 // Faster progress increments
                 })
-            }, 200)
+            }, 150) // Faster updates
             return () => clearInterval(interval)
         }
     }, [isLoading])
@@ -58,7 +58,7 @@ const App = () => {
                 className="relative min-h-screen w-screen text-white overflow-x-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isLoading ? 0 : 1 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.4 }}
                 style={{ display: isLoading ? "none" : "block" }}
             >
                 {/* Background Layers */}
@@ -66,7 +66,7 @@ const App = () => {
                 <Background onVideoLoaded={handleVideoLoaded} />
                 <BgMask />
 
-                {/* Main Content Container with improved spacing */}
+                {/* Main Content Container */}
                 <div className="relative z-10 min-h-screen max-w-screen mx-auto">
                     {/* Header Section */}
                     <header className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
@@ -75,7 +75,7 @@ const App = () => {
                         </div>
                     </header>
 
-                    {/* Main Content with better spacing */}
+                    {/* Main Content */}
                     <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                         <div className="max-w-7xl mx-auto">
                             <Projects />
@@ -89,32 +89,6 @@ const App = () => {
                         </div>
                     </footer>
                 </div>
-
-                {/* Floating elements - disabled on mobile for performance */}
-                {!isMobile && (
-                    <div className="fixed inset-0 pointer-events-none z-5 overflow-hidden">
-                        {[...Array(3)].map((_, i) => (
-                            <motion.div
-                                key={i}
-                                className="absolute w-1 h-1 bg-white/10 rounded-full"
-                                style={{
-                                    left: `${Math.random() * 100}%`,
-                                    top: `${Math.random() * 100}%`,
-                                }}
-                                animate={{
-                                    y: [0, -40],
-                                    opacity: [0, 0.3, 0],
-                                }}
-                                transition={{
-                                    duration: 8,
-                                    repeat: Infinity,
-                                    delay: Math.random() * 4,
-                                    ease: "linear",
-                                }}
-                            />
-                        ))}
-                    </div>
-                )}
             </motion.div>
         </>
     )

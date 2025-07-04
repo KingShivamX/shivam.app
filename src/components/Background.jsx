@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from "react"
 import { motion } from "framer-motion"
+import useIsMobile from "../hooks/useIsMobile"
 
 const Background = ({ onVideoLoaded }) => {
     const videoRef = useRef(null)
+    const isMobile = useIsMobile()
 
     useEffect(() => {
         const video = videoRef.current
@@ -32,14 +34,14 @@ const Background = ({ onVideoLoaded }) => {
                 muted
                 loop
                 playsInline
-                preload="auto"
+                preload={isMobile ? "none" : "metadata"}
             >
                 <source src="./shivamapp.webm" type="video/webm" />
                 <source src="./shivamapp.mp4" type="video/mp4" />
             </video>
 
-            {/* Simple overlay */}
-            <div className="absolute inset-0 bg-black/30" />
+            {/* Simplified overlay */}
+            <div className="absolute inset-0 bg-black/40" />
         </div>
     )
 }
