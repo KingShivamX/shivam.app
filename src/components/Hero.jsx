@@ -93,8 +93,7 @@ const Hero = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.7 }}
                     >
-                        B.Tech CSE, SY Student at MIT Academy of Engineering,
-                        Pune
+                        B.Tech CSE Student at MIT Academy of Engineering, Pune
                     </motion.p>
                 </div>
             </motion.div>

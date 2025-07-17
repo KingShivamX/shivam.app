@@ -44,7 +44,7 @@ const socialLinks = [
     {
         id: "resume",
         Icon: FaIdCard,
-        url: "/Shivam_Hippalgave_Resume.pdf",
+        url: "https://drive.google.com/file/d/1i7iK_0CTLIHewl4zpQS2b6JKmfJ2_j02",
         color: "text-gray-300",
         isExternal: true,
     },
