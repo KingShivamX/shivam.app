@@ -12,6 +12,18 @@ const projectsData = [
         tech: "React.js, Chart.js, Framer-Motion, TailwindCSS, React Router",
     },
     {
+        id: "nerds-on-call",
+        title: "Nerds-on-Call",
+        url: "https://nerds-on-call.vercel.app/",
+        tech: "Next.js, Spring Boot, Radix UI, TailwindCSS, Stripe, Socket.io, OpenAI API, TypeScript",
+    },
+    {
+        id: "origami-cf",
+        title: "Origami-CF",
+        url: "https://origami-cf.vercel.app/",
+        tech: "Next.js, MongoDB, JWT, Recharts, TailwindCSS, TypeScript, SWR",
+    },
+    {
         id: "rest-relax",
         title: "Rest&Relax",
         url: "https://restnrelax.vercel.app/listing",
@@ -24,22 +36,10 @@ const projectsData = [
         tech: "React.js, Node.js, Express.js, MongoDB, DALL-E API, Cloudinary, Tailwind CSS",
     },
     {
-        id: "eco-connect",
-        title: "Eco Connect",
-        url: "https://eco-connect-mit.vercel.app/login",
-        tech: "React.js, Node.js, Express.js, MongoDB, Tailwind CSS",
-    },
-    {
         id: "energy-prediction",
         title: "Energy Consumption Prediction",
         url: "https://www.youtube.com/watch?v=Q8R45QDseDE",
         tech: "Flask, Pandas, NumPy, Matplotlib, Linear Regression, HTML, Bootstrap",
-    },
-    {
-        id: "bharat-philately",
-        title: "Bharat Philately",
-        url: "https://bharatphilately.vercel.app/",
-        tech: "React.js, Tailwind CSS, Framer-Motion, React Router, Shadcn/ui",
     },
     {
         id: "spotify-clone",
