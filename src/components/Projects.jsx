@@ -15,13 +15,13 @@ const projectsData = [
         id: "nerds-on-call",
         title: "Nerds-on-Call",
         url: "https://nerds-on-call.vercel.app/",
-        tech: "Next.js, Spring Boot, Radix UI, TailwindCSS, Stripe, Socket.io, OpenAI API, TypeScript",
+        tech: "Next.js, Spring Boot, Radix UI, TailwindCSS, Razorpay, Socket.io, OpenAI API, TypeScript",
     },
     {
         id: "origami-cf",
         title: "Origami-CF",
         url: "https://origami-cf.vercel.app/",
-        tech: "Next.js, MongoDB, JWT, Recharts, TailwindCSS, TypeScript, SWR",
+        tech: "Next.js, MongoDB, JWT, Recharts, Shadcn/ui, TailwindCSS, Codeforces API, TypeScript, SWR",
     },
     {
         id: "rest-relax",

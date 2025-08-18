@@ -30,18 +30,25 @@ const Resume = () => {
 
             {/* Full Screen PDF Viewer */}
             <iframe
-                src="/Shivam_Hippalgave_Resume.pdf#zoom=FitH&scrollbar=0&toolbar=0&navpanes=0"
+                src="/Shivam_Hippalgave_Resume.pdf#view=FitH&toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&scrolling=no"
                 className="w-full h-full border-0 block"
                 title="Shivam Hippalgave Resume"
                 onLoad={handleLoad}
+                frameBorder="0"
+                scrolling="no"
+                seamless
+                allowFullScreen={false}
                 style={{
                     width: "100vw",
                     height: "100vh",
                     border: "none",
                     margin: 0,
                     padding: 0,
-                    transform: isMobile ? "scale(1.1)" : "scale(1)",
-                    transformOrigin: "top left",
+                    outline: "none",
+                    overflow: "hidden",
+                    transform: isMobile ? "scale(1.05)" : "scale(1)",
+                    transformOrigin: "top center",
+                    pointerEvents: "auto",
                 }}
             />
         </motion.div>
