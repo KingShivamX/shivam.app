@@ -44,9 +44,9 @@ const socialLinks = [
     {
         id: "resume",
         Icon: FaIdCard,
-        url: "https://drive.google.com/file/d/1i7iK_0CTLIHewl4zpQS2b6JKmfJ2_j02",
+        url: "/resume",
         color: "text-gray-300",
-        isExternal: true,
+        isExternal: false,
     },
 ]
 

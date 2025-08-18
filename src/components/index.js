@@ -5,5 +5,15 @@ import Background from "./Background.jsx"
 import BgMask from "./BgMask.jsx"
 import BgBehind from "./BgBehind.jsx"
 import LoadingScreen from "./LoadingScreen.jsx"
+import Resume from "./Resume.jsx"
 
-export { Hero, Projects, Socials, Background, BgMask, BgBehind, LoadingScreen }
+export {
+    Hero,
+    Projects,
+    Socials,
+    Background,
+    BgMask,
+    BgBehind,
+    LoadingScreen,
+    Resume,
+}

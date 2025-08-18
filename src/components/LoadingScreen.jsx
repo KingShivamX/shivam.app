@@ -3,7 +3,7 @@ import { useMemo } from "react"
 import PropTypes from "prop-types"
 import useIsMobile from "../hooks/useIsMobile"
 
-const LoadingScreen = ({ progress, isComplete }) => {
+const LoadingScreen = ({ progress, isComplete = false }) => {
     const isMobile = useIsMobile()
 
     // Memoize particle positions for better performance
@@ -143,10 +143,6 @@ const LoadingScreen = ({ progress, isComplete }) => {
 LoadingScreen.propTypes = {
     progress: PropTypes.number.isRequired,
     isComplete: PropTypes.bool,
-}
-
-LoadingScreen.defaultProps = {
-    isComplete: false,
 }
 
 export default LoadingScreen
