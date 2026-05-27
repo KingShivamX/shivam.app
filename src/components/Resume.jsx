@@ -30,7 +30,7 @@ const Resume = () => {
 
             {/* PDF Viewer */}
             <iframe
-                src="/color-resume-shivam-hippalgave.pdf#view=Fit&toolbar=1&navpanes=0&scrollbar=1"
+                src="/RESUME_SHIVAM_HIPPALGAVE.pdf#view=Fit&toolbar=1&navpanes=0&scrollbar=1"
                 className="w-full h-full border-0"
                 title="Shivam Hippalgave Resume"
                 onLoad={handleLoad}
